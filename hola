@@ -1,0 +1,21 @@
+#Cosas practicas:
+
+#Llibreries
+import hyperspy.api as hs
+import matplotlib.pyplot as plt
+
+#hyperspy esta pensat per treballar directament amb dades d'EELS. 
+file_name = 'blablabla.dm3'
+spec_img = hs.load(file_name)
+spec_img.metadata #info del spectrum image
+spec_img.axes_manager #info de ejes 
+#Para trabajar con la numpy array del espectro. 
+si_np_array = spec_img.data
+#volver a hyperspy para visualizar las cosas
+si_hspy = hs.signals.EELSSpectrum(si_np_array)
+si_hspy.plot() #visualizar el espectro 
+%matplotlib inline
+%matplotlib qt #pots pasar pixel a pixel 
+
+#PCA: 
+
